@@ -2,8 +2,9 @@ package library;
 
 public class Book {
 	
-	String author;
-	String title;
+	private String author, title;
+	//which shelf this book is located in?
+	Shelf shelf;
 
 	public Book(String author, String title) {
 		this.author = author;
@@ -19,18 +20,18 @@ public class Book {
 	}
 
 	public String toString() {
-		return "\""+author + ", "+title+"\"";
+		return author + ", " + title;
 	}
 
 	public int getShelf() {
-		return 0;
+		return shelf.getNumber();
 	}
 
 	public String getCloset() {
-		return "";
+		return shelf.getCloset().getName();
 	}
 
 	public int getFloor() {
-		return 0;
+		return shelf.getCloset().getFloorNumber();
 	}
 }
