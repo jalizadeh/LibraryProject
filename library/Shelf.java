@@ -31,7 +31,7 @@ public class Shelf {
 		
 		for (int i = 0; i < books.length; i++) {
 			if(books[i] != null)
-				total += "         Book #" + (i+1) + ": "+ 
+				total += "         Book #" + i + ": "+ 
 						books[i].getAuthor() + ", " + books[i].getTitle() + "\n";
 		}
 		
@@ -63,5 +63,17 @@ public class Shelf {
 		}
 		
 		return null;
+	}
+
+
+
+	public boolean contains(Book book) {
+		for (int i = 0; i < books.length; i++) {
+			if(books[i] != null)
+				if(books[i].equals(book))
+					return true;
+		}
+		
+		return false;
 	}
 }

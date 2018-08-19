@@ -46,6 +46,10 @@ public class Floor {
 		return null;
 	}
 
+	public boolean contains(String closet, int shelf, Book book) {
+		return getCloset(closet).contains(shelf, book);
+	}
+
 	
 
 }

@@ -15,11 +15,11 @@ public class Library {
 	}
 
 	public boolean contains(int floor, String closet, int shelf, Book book) {
-		return false;
+		return floors[floor].contains(closet,shelf,book);
 	}
 
 	public String getBooks(int floor, String closet) {
-		return "Floor #"+ (floor+1) +"\n"+ floors[floor].getBooks(closet);
+		return "Floor #"+ floor +"\n"+ floors[floor].getBooks(closet);
 	}
 
 	public Book find(String author, String title) {
@@ -31,5 +31,4 @@ public class Library {
 		
 		return null;
 	}
-
 }
