@@ -24,7 +24,7 @@ public class Floor {
 	}
 
 	public String getBooks(String closet) {
-		return getCloset(closet).getBooks();
+		return "  Closet "+closet+"\n" + getCloset(closet).getBooks();
 	}
 
 	private Closet getCloset(String name) {
@@ -33,6 +33,16 @@ public class Floor {
 				return closets[i];
 		}
 	
+		return null;
+	}
+
+	public Book find(String author, String title) {
+		for (int i = 0; i < closets.length; i++) {
+			Book b = closets[i].find(author, title);
+			if(b!=null)
+				return b;
+		}
+		
 		return null;
 	}
 

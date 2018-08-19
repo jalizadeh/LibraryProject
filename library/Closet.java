@@ -35,7 +35,7 @@ public class Closet {
 		String total = "";
 		
 		for (int i = 0; i < shelves.length; i++) {
-			total += "Shelf #" + i + "\n" + shelves[i].getBooks();
+			total += "      Shelf #" + (i+1) + "\n" + shelves[i].getBooks();
 		}
 		
 		return total;
@@ -47,5 +47,15 @@ public class Closet {
 
 	private Shelf getShelf(int shelf) {
 		return shelves[shelf];
+	}
+
+	public Book find(String author, String title) {
+		for (int i = 0; i < shelves.length; i++) {
+			Book b = shelves[i].find(author,title);
+			if(b != null)
+				return b;
+		}
+		
+		return null;
 	}
 }

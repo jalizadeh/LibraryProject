@@ -31,10 +31,37 @@ public class Shelf {
 		
 		for (int i = 0; i < books.length; i++) {
 			if(books[i] != null)
-				total += "Book #" + i + ": "+ 
+				total += "         Book #" + (i+1) + ": "+ 
 						books[i].getAuthor() + ", " + books[i].getTitle() + "\n";
 		}
 		
 		return total;
+	}
+
+
+
+	public boolean add(Book book) {
+		for (int i = 0; i < books.length; i++) {
+			if(books[i]==null) {
+				books[i] = book;
+				book.setShelf(this);
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
+
+
+	public Book find(String author, String title) {
+		for (int i = 0; i < books.length; i++) {
+			if(books[i] != null)
+				if(books[i].getAuthor().equals(author) 
+						&& books[i].getTitle().equals(title))
+					return books[i];
+		}
+		
+		return null;
 	}
 }

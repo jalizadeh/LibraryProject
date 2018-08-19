@@ -34,4 +34,8 @@ public class Book {
 	public int getFloor() {
 		return shelf.getCloset().getFloorNumber();
 	}
+
+	public void setShelf(Shelf shelf) {
+		this.shelf = shelf;		
+	}
 }

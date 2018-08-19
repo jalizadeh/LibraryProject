@@ -19,13 +19,16 @@ public class Library {
 	}
 
 	public String getBooks(int floor, String closet) {
-		for(int i =0; i<6;i++) {
-			floors[floor].getBooks(closet);
-		}
-		return "";
+		return "Floor #"+ (floor+1) +"\n"+ floors[floor].getBooks(closet);
 	}
 
 	public Book find(String author, String title) {
+		for (int i = 0; i < floors.length; i++) {
+			Book b = floors[i].find(author, title);
+			if(b != null)
+				return b;
+		}
+		
 		return null;
 	}
 
